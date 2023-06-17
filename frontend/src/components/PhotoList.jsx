@@ -1,18 +1,13 @@
 import React from 'react';
 import '../styles/PhotoList.scss';
+import PhotoListItem from './PhotoListItem';
 
-const PhotoList = ({ photos }) => {
+const PhotoList = ({ photos, handleFavoriteClick, isFavorite }) => {
   return (
     <ul className="photo-list">
       {photos.map((photo) => (
         <li key={photo.id}>
-          <img src={photo.urls.regular} alt="Photo" />
-          <div className="details">
-            <div className="username">{photo.user.username}</div>
-            <div className="location">
-              The photo is made in {photo.location.city}, which is in {photo.location.country}
-            </div>
-          </div>
+          <PhotoListItem name={photo.user.name} location={photo.location} handleFavoriteClick={handleFavoriteClick} isFavorite={isFavorite} photoURL={photo.urls.regular}/>
         </li>
       ))}
     </ul>

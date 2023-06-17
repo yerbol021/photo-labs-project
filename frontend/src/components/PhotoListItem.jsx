@@ -2,15 +2,17 @@
 import React from 'react';
 
 import '../styles/PhotoListItem.scss';
+import PhotoFavButton from './PhotoFavButton';
 
-const PhotoListItem = ({username, location}) => {
+const PhotoListItem = ({ name, location, handleFavoriteClick, isFavorite,photoURL }) => {
   return (
     <div className="photo-list-item">
-      <img src={`${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`} alt="Photo" />
+      <img src={photoURL} alt="Photo" />
       <div className="details">
-        <div className="username">{username}</div>
+        <div className="username">{name}</div>
         <div className="location">The photo is made in {location.city} which is in {location.country}</div>
       </div>
+      <PhotoFavButton handleFavoriteClick={handleFavoriteClick} isFavorite ={isFavorite}/>
     </div>
   );
 };
