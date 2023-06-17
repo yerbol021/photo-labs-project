@@ -7,21 +7,21 @@ import './styles/PhotoListItem.scss';
 
 const App = () => {
   const photos = [1, 2, 3]; // Create an array of three elements
-  console.log("test", photos);
+  console.log("hello");
 
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleFavoriteClick = () => {
-  setIsFavorite(!isFavorite);
-};
+    setIsFavorite(!isFavorite);
+  };
   return (
     <div className="App">
       <div className='photo-list'>
-      {photos.map((photoId) => (
-        <PhotoListItem key={photoId} />
-        ))}
+        {photos.map((photoId) => (
+          <PhotoListItem key={photoId} />
+          ))}
+          <FavIcon />
       </div>
-      <FavIcon isFavorite={isFavorite} onClick={handleFavoriteClick} />
     </div>
   );
 };
