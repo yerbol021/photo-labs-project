@@ -4,15 +4,20 @@ import TopNavigation from "./TopNavigationBar";
 import PhotoList from "./PhotoList";
 
 export const HomeRoute = () => {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+
+  const handleFavoriteClick = (photoId) => {
+    if (favorites.includes(photoId)) {
+      setFavorites(favorites.filter((id) => id !== photoId));
+    } else {
+      setFavorites([...favorites, photoId]);
+    }
+  };
+
   return (
     <div className="home-route">
-      <TopNavigation />
-      <PhotoList
-        isFavorite={isFavorite}
-        handleFavoriteClick={() => setIsFavorite(!isFavorite)}
-
-      />
+      <TopNavigation favoriteCount={favorites.length} />
+      <PhotoList handleFavoriteClick={handleFavoriteClick} favorites={favorites} />
     </div>
   );
 };
