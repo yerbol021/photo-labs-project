@@ -3,6 +3,7 @@ import PhotoList from './components/PhotoList';
 import './App.scss';
 import './styles/PhotoListItem.scss';
 import TopNavigation from './components/TopNavigationBar';
+import HomeRoute from './components/HomeRoute';
 
 
 const App = () => {
@@ -14,13 +15,14 @@ const App = () => {
   };
   return (
     <div className="App">
-      <div className='photo-list'>
+      {/* <div className='photo-list'>
         <TopNavigation />
         <PhotoList 
         handleFavoriteClick={handleFavoriteClick} 
         isFavorite ={isFavorite}/>
         
-      </div>
+      </div> */}
+      <HomeRoute/>
     </div>
   );
 };
