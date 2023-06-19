@@ -1,12 +1,18 @@
 import React from 'react';
+import '../styles/TopicListItem.scss';
 
-import '../styles/TopicListItem'
-
-const TopicListItem = () => {
+const TopicListItem = ({
+  slug, label
+}) => {
+  return (
   <div className="topic-list__item">
-    {/* Insert React */}
+    <div className='label'>{label}
+      <div className='slug'>{slug}</div>
+    </div>
   </div>
-}
+
+  );
+};
 
 TopicListItem.defaultProps =   {
   "id": "1",

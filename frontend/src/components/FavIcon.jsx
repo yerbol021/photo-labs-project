@@ -11,18 +11,7 @@ export function FavIcon({
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  // const handleFavoriteClick = () => {
-  //   setIsFavorite(!isFavorite);
-  //   console.log("button clicked")
-  // };
-
   return (
-    // <button
-    //   type="button"
-    //   className={`LikeButton ${isFavorite ? 'favorite' : ''}`}
-    //   onClick={handleFavoriteClick}
-    // >
-
       <svg
         width={width}
         height={height}
@@ -49,7 +38,6 @@ export function FavIcon({
           />
         )}
       </svg>
-    // </button>
   );
 }
 

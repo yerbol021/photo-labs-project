@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import FavIcon from './components/FavIcon';
-import PhotoListItem from './components/PhotoListItem';
 import PhotoList from './components/PhotoList';
 import './App.scss';
 import './styles/PhotoListItem.scss';

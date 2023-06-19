@@ -1,8 +1,7 @@
-
 import React from 'react';
-
-import '../styles/PhotoListItem.scss';
 import PhotoFavButton from './PhotoFavButton';
+import TopicListItem from './TopicListItem';
+import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = ({ name, location, handleFavoriteClick, isFavorite,photoURL }) => {
   return (
@@ -12,6 +11,7 @@ const PhotoListItem = ({ name, location, handleFavoriteClick, isFavorite,photoUR
         <div className="username">{name}</div>
         <div className="location">The photo is made in {location.city} which is in {location.country}</div>
       </div>
+      <TopicListItem />
       <PhotoFavButton 
       handleFavoriteClick={handleFavoriteClick} 
       isFavorite ={isFavorite}/>
