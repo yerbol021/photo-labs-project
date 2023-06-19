@@ -6,12 +6,15 @@ import PhotoDetailsModal from '../routes/PhotoDetailsModal';
 
 const PhotoList = ({ handleFavoriteClick, favorites }) => {
   const [showModal, setShowModal] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
-  const handlePhotoClick = () => {
+  const handlePhotoClick = (photo) => {
+    setSelectedPhoto(photo);
     setShowModal(true);
   };
 
   const handleCloseModal = () => {
+    setSelectedPhoto(null);
     setShowModal(false);
   };
 
@@ -19,7 +22,7 @@ const PhotoList = ({ handleFavoriteClick, favorites }) => {
     <div>
       <ul className="photo-list">
         {photos.map((photo) => (
-          <li key={photo.id} onClick={handlePhotoClick}>
+          <li key={photo.id} onClick={() => handlePhotoClick(photo)}>
             <PhotoListItem 
               name={photo.user.name} 
               location={photo.location} 
@@ -30,7 +33,12 @@ const PhotoList = ({ handleFavoriteClick, favorites }) => {
           </li>
         ))}
       </ul>
-      {showModal && <PhotoDetailsModal onClose={handleCloseModal} />}
+      {showModal && selectedPhoto && (
+        <PhotoDetailsModal
+          onClose={handleCloseModal}
+          photo={selectedPhoto}
+        />
+      )}
     </div>
   );
 };
