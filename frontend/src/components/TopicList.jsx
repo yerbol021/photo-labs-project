@@ -1,12 +1,21 @@
 import React from 'react';
 
-import './TopicList.scss';
+import TopicListItem from './TopicListItem';
+import '../styles/TopicList.scss';
 
-const TopicList = () => {
+const TopicList = ({topics}) => {
+  return (
   <div className="top-nav-bar__topic-list">
-    {/* Insert React */}
+    {topics.map((topic)=>(
+      <li key={topic.id}>
+        <TopicListItem
+        title={topic.title}
+        slug={topic.slug}/>
+      </li>
+    ))}
   </div>
-}
+  );
+};
 
 TopicList.defaultProps = {
   topics: [

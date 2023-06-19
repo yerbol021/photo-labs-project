@@ -2,11 +2,11 @@ import React from 'react';
 import '../styles/TopicListItem.scss';
 
 const TopicListItem = ({
-  slug, label
+  slug, title
 }) => {
   return (
   <div className="topic-list__item">
-    <div className='label'>{label}
+    <div className='title'>{title}
       <div className='slug'>{slug}</div>
     </div>
   </div>
@@ -17,6 +17,6 @@ const TopicListItem = ({
 TopicListItem.defaultProps =   {
   "id": "1",
   "slug": "topic-1",
-  "label": "Nature"
+  "title": "Nature"
 }
 export default TopicListItem
