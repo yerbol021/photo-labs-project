@@ -16,7 +16,9 @@ const App = () => {
   return (
     <div className="App">
       <div className='photo-list'>
-        <PhotoList handleFavoriteClick={handleFavoriteClick} isFavorite ={isFavorite}/>
+        <PhotoList 
+        handleFavoriteClick={handleFavoriteClick} 
+        isFavorite ={isFavorite}/>
         
       </div>
     </div>

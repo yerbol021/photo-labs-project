@@ -7,7 +7,12 @@ const PhotoList = ({ photos, handleFavoriteClick, isFavorite }) => {
     <ul className="photo-list">
       {photos.map((photo) => (
         <li key={photo.id}>
-          <PhotoListItem name={photo.user.name} location={photo.location} handleFavoriteClick={handleFavoriteClick} isFavorite={isFavorite} photoURL={photo.urls.regular}/>
+          <PhotoListItem 
+          name={photo.user.name} 
+          location={photo.location} 
+          handleFavoriteClick={handleFavoriteClick} 
+          isFavorite={isFavorite} 
+          photoURL={photo.urls.regular}/>
         </li>
       ))}
     </ul>

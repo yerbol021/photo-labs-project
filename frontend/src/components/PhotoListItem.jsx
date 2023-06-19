@@ -12,7 +12,9 @@ const PhotoListItem = ({ name, location, handleFavoriteClick, isFavorite,photoUR
         <div className="username">{name}</div>
         <div className="location">The photo is made in {location.city} which is in {location.country}</div>
       </div>
-      <PhotoFavButton handleFavoriteClick={handleFavoriteClick} isFavorite ={isFavorite}/>
+      <PhotoFavButton 
+      handleFavoriteClick={handleFavoriteClick} 
+      isFavorite ={isFavorite}/>
     </div>
   );
 };
