@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import './styles/PhotoListItem.scss';
 import HomeRoute from './components/HomeRoute';
+import PhotoDetailsModal from './routes/PhotoDetailsModal';
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute/>
+      {/* <PhotoDetailsModal/> */}
     </div>
   );
 };
