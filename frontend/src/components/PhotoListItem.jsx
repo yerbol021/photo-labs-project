@@ -4,6 +4,7 @@ import TopicListItem from './TopicListItem';
 import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = ({ name, location, handleFavoriteClick, isFavorite,photoURL }) => {
+  
   return (
     <div className="photo-list-item">
       <img src={photoURL} alt="Photo" />
