@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './App.scss';
 import './styles/PhotoListItem.scss';
 import HomeRoute from './components/HomeRoute';
-
+import photos from './mocks/photos';
+import topics from './mocks/topics';
 
 const App = () => {
 
