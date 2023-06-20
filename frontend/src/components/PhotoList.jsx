@@ -15,6 +15,7 @@ const PhotoList = ({ handleFavoriteClick, favorites, handlePhotoClick}) => {
             <PhotoListItem 
               name={photo.user.name} 
               location={photo.location} 
+              profile = {photo.user.profile}
               handleFavoriteClick={() => handleFavoriteClick(photo.id)} 
               handlePhotoClick={() => handlePhotoClick(photo.id)} 
               isFavorite={favorites.includes(photo.id)} 
