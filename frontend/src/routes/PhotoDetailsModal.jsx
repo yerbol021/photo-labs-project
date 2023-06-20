@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/PhotoDetailsModal.scss';
 
 export const PhotoDetailsModal = ({ onClose, photo }) => {
-  console.log(photo); // Print out the photo data
+  // console.log(photo); // Print out the photo data
 
   return (
     <div className='photo-details-modal'>
@@ -19,6 +19,15 @@ export const PhotoDetailsModal = ({ onClose, photo }) => {
           </defs>
         </svg>
       </button>
+      <div className="photo-details-modal--content">
+        <img src={photo.urls.regular} className="photo-details-modal--image" />
+        <div className="photo-details-modal--header">
+          <h2>Similar Photos</h2>
+        </div>
+        <div className='.photo-details-modal--images'>
+          <li>photos</li>
+        </div>
+      </div>
     </div>
   );
 };
