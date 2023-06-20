@@ -1,20 +1,10 @@
 // .LikeButton {
   
 //   top: 10px;
-//   left: 10px;
-//   cursor: pointer;
-// }
 
-// .LikeButton-svg {
-//   position: relative;
-//   top: 2px;
-// }
-
-// .LikeButton.favorite {
-//   color: green !important;
-// }
 
 .photo-list__fav-icon {
-  top: 0;
-  left: 0;
+  position: absolute;
+  top: 25px;
+  left: 25px;
 }
