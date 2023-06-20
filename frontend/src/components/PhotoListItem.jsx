@@ -7,6 +7,9 @@ const PhotoListItem = ({ name, location, profile, handleFavoriteClick, isFavorit
   
   return (
     <div className="photo-list-item">
+      <PhotoFavButton 
+      handleFavoriteClick={handleFavoriteClick} 
+      isFavorite ={isFavorite}/>
       <img src={photoURL} alt="Photo"
       onClick={handlePhotoClick} />
       <div className="details">
@@ -15,9 +18,6 @@ const PhotoListItem = ({ name, location, profile, handleFavoriteClick, isFavorit
         <div className="location">The photo is made in {location.city} which is in {location.country}</div>
       </div>
       
-      <PhotoFavButton 
-      handleFavoriteClick={handleFavoriteClick} 
-      isFavorite ={isFavorite}/>
     </div>
   );
 };

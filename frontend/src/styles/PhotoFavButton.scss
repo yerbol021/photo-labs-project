@@ -1,29 +1,20 @@
-.LikeButton {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  cursor: pointer;
-  margin-bottom: -30px;
-  border-width: 0.1px;
-  background-color: #eeeeee;
-  width: 32px;
-  height: 32px;
-  text-align: center;
-  border-radius: 100%;
-  color: yellow; /* Styles for the button */
-}
+// .LikeButton {
+  
+//   top: 10px;
+//   left: 10px;
+//   cursor: pointer;
+// }
 
-.LikeButton-svg {
-  position: relative;
-  top: 2px;
-}
+// .LikeButton-svg {
+//   position: relative;
+//   top: 2px;
+// }
 
-.LikeButton.favorite {
-  color: green !important;
-}
+// .LikeButton.favorite {
+//   color: green !important;
+// }
 
-.photo-list__fav-icon-svg {
-  // position: absolute;
-  top: 10px;
-  left: 10px;
+.photo-list__fav-icon {
+  top: 0;
+  left: 0;
 }
