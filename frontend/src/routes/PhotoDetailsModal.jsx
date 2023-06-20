@@ -1,9 +1,13 @@
 import React from 'react';
 import '../styles/PhotoDetailsModal.scss';
+import photos from '../mocks/photos';
+import PhotoList from '../components/PhotoList';
 
 export const PhotoDetailsModal = ({ onClose, photo }) => {
-  // console.log(photo); // Print out the photo data
-
+  console.log("photo:", photo); // Print out the photo data
+  console.log("photos:", photos[photo -1]);
+  const srcImage = photos[photo -1];
+  
   return (
     <div className='photo-details-modal'>
       <button className='photo-details-modal--close-button' onClick={onClose}>
@@ -20,12 +24,14 @@ export const PhotoDetailsModal = ({ onClose, photo }) => {
         </svg>
       </button>
       <div className="photo-details-modal--content">
-        <img src={photo.urls.regular} className="photo-details-modal--image" />
+        <img src={srcImage.urls.regular} className="photo-details-modal--image" />
         <div className="photo-details-modal--header">
           <h2>Similar Photos</h2>
         </div>
         <div className='.photo-details-modal--images'>
-          <li>photos</li>
+          <PhotoList 
+          favorites={[]}
+          photos={srcImage.similar_photos}/>
         </div>
       </div>
     </div>
@@ -33,3 +39,7 @@ export const PhotoDetailsModal = ({ onClose, photo }) => {
 };
 
 export default PhotoDetailsModal;
+
+
+// {photo.similar_photos.map((similar_photo) => (<li key={similar_photo.id}>
+//   <img src={similar_photo.urls.regular} />{similar_photo.id}</li>))}

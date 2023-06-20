@@ -3,11 +3,12 @@ import PhotoFavButton from './PhotoFavButton';
 import TopicListItem from './TopicListItem';
 import '../styles/PhotoListItem.scss';
 
-const PhotoListItem = ({ name, location, handleFavoriteClick, isFavorite,photoURL }) => {
+const PhotoListItem = ({ name, location, handleFavoriteClick, isFavorite,photoURL, handlePhotoClick}) => {
   
   return (
     <div className="photo-list-item">
-      <img src={photoURL} alt="Photo" />
+      <img src={photoURL} alt="Photo"
+      onClick={handlePhotoClick} />
       <div className="details">
         <div className="username">{name}</div>
         <div className="location">The photo is made in {location.city} which is in {location.country}</div>

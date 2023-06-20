@@ -3,9 +3,8 @@ import '../styles/HomeRoute.scss';
 import TopNavigation from "./TopNavigationBar";
 import PhotoList from "./PhotoList";
 
-export const HomeRoute = () => {
+export const HomeRoute = (props) => {
   const [favorites, setFavorites] = useState([]);
-  
 
   const handleFavoriteClick = (photoId) => {
     console.log(photoId)
@@ -25,6 +24,7 @@ export const HomeRoute = () => {
       <TopNavigation favoriteCount={favorites.length} />
       <PhotoList 
       handleFavoriteClick={handleFavoriteClick} 
+      handlePhotoClick= {props.handlePhotoClick}
       favorites={favorites} />
     </div>
   );
