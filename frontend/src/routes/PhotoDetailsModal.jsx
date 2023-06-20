@@ -3,11 +3,11 @@ import '../styles/PhotoDetailsModal.scss';
 import photos from '../mocks/photos';
 import PhotoList from '../components/PhotoList';
 
-export const PhotoDetailsModal = ({ onClose, photo }) => {
+export const PhotoDetailsModal = ({ onClose, photo, handleFavoriteClick, favorites }) => {
   console.log("photo:", photo); // Print out the photo data
   console.log("photos:", photos[photo -1]);
   const srcImage = photos[photo -1];
-  
+
   return (
     <div className='photo-details-modal'>
       <button className='photo-details-modal--close-button' onClick={onClose}>
@@ -30,8 +30,10 @@ export const PhotoDetailsModal = ({ onClose, photo }) => {
         </div>
         <div className='.photo-details-modal--images'>
           <PhotoList 
-          favorites={[]}
-          photos={srcImage.similar_photos}/>
+            favorites={favorites}
+            photos={srcImage.similar_photos}
+            handleFavoriteClick={handleFavoriteClick}
+          />
         </div>
       </div>
     </div>
@@ -40,6 +42,3 @@ export const PhotoDetailsModal = ({ onClose, photo }) => {
 
 export default PhotoDetailsModal;
 
-
-// {photo.similar_photos.map((similar_photo) => (<li key={similar_photo.id}>
-//   <img src={similar_photo.urls.regular} />{similar_photo.id}</li>))}

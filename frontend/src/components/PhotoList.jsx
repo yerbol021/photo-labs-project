@@ -23,12 +23,6 @@ const PhotoList = ({ handleFavoriteClick, favorites, handlePhotoClick}) => {
           </li>
         ))}
       </ul>
-      {/* {showModal && selectedPhoto && (
-        <PhotoDetailsModal
-          onClose={handleCloseModal}
-          photo={selectedPhoto}
-        />
-      )} */}
     </div>
   );
 };
