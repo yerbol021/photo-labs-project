@@ -1,32 +1,41 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
+import reducer, { ACTIONS } from './reducer';
 
 const useApplicationData = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [favorites, setFavorites] = useState([]);
+  const [state, dispatch] = useReducer(reducer, {
+    favorites: [],
+    topics: [],
+    photos: [],
+    showModal: false,
+  });
 
   const handleFavoriteClick = (photoId) => {
-    if (favorites.includes(photoId)) {
-      setFavorites((prev) => prev.filter((id) => id !== photoId));
+    if (state.favorites.includes(photoId)) {
+     dispatch ({type: ACTIONS.FAV_PHOTO_REMOVED, 
+      data: state.favorites.filter((id) => id !== photoId)})
+
     } else {
-      setFavorites((prev) => [...prev, photoId]);
+      dispatch({type: ACTIONS.FAV_PHOTO_ADDED, 
+        data: [...state.favorites, photoId]})
     }
   };
 
   const handlePhotoClick = (photo) => {
-    setSelectedPhoto(photo);
-    setShowModal(true);
+    dispatch({type: ACTIONS.SELECT_PHOTO, 
+      data: photo})
   };
 
   const handleCloseModal = () => {
-    setSelectedPhoto(null);
-    setShowModal(false);
+    dispatch({type: ACTIONS.SET_CLOSE_MODAL,
+      data: false,
+    })
   };
 
   return {
-    showModal,
-    selectedPhoto,
-    favorites,
+    state,
     handleFavoriteClick,
     handlePhotoClick,
     handleCloseModal,

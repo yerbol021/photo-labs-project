@@ -8,9 +8,7 @@ import useApplicationData from './hooks/useApplicationData';
 const App = () => {
 
   const {
-    showModal,
-    selectedPhoto,
-    favorites,
+    state,
     handleFavoriteClick,
     handlePhotoClick,
     handleCloseModal,
@@ -21,14 +19,14 @@ const App = () => {
       <HomeRoute
         handlePhotoClick={handlePhotoClick}
         handleFavoriteClick={handleFavoriteClick}
-        favorites={favorites}
+        favorites={state.favorites}
       />
-      {showModal && selectedPhoto && (
+      {state.showModal && state.selectedPhoto && (
         <PhotoDetailsModal
           onClose={handleCloseModal}
-          photo={selectedPhoto}
+          photo={state.selectedPhoto}
           handleFavoriteClick={handleFavoriteClick}
-          favorites={favorites}
+          favorites={state.favorites}
         />
       )}
     </div>
