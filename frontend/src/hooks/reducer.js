@@ -14,13 +14,13 @@ function reducer(state, action) {
     case ACTIONS.FAV_PHOTO_ADDED:
       return {
         ...state,
-        favorites: action.data,
+        favorites: [...state.favorites, action.data],
       }
 
     case ACTIONS.FAV_PHOTO_REMOVED:
       return {
         ...state,
-        favorites: action.data,
+        favorites: state.favorites.filter((id) => id !== action.data)
       }
     case ACTIONS.SET_PHOTO_DATA:
       return {
