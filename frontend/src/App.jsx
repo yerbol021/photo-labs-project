@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import './styles/PhotoListItem.scss';
 import HomeRoute from './components/HomeRoute';
@@ -7,6 +7,9 @@ import useApplicationData from './hooks/useApplicationData';
 
 const App = () => {
 
+  const [photos, setPhotos] = useState([]);
+  const [topics, setTopics] = useState([]);
+
   const {
     state,
     handleFavoriteClick,
@@ -14,17 +17,44 @@ const App = () => {
     handleCloseModal,
   } = useApplicationData();
 
+  useEffect(() => {
+    const fetchPhotos = () => {
+      fetch('http://localhost:8001/api/photos')
+        .then(response => response.json())
+        .then(data => {
+          console.log({ data });
+          setPhotos(data);
+        })
+        .catch(error => console.error(error));
+    };
+
+    const fetchTopics = () => {
+      fetch('http://localhost:8001/api/topics')
+        .then(response => response.json())
+        .then(data => {
+          setTopics(data);
+        })
+        .catch(error => console.error(error));
+    };
+
+    fetchPhotos();
+    fetchTopics();
+  }, []);
+
+
   return (
     <div className="App">
       <HomeRoute
         handlePhotoClick={handlePhotoClick}
         handleFavoriteClick={handleFavoriteClick}
         favorites={state.favorites}
+        photos={photos}
+        topics={topics}
       />
       {state.showModal && state.selectedPhoto && (
         <PhotoDetailsModal
           onClose={handleCloseModal}
-          photo={state.selectedPhoto}
+          photo={photos.find(photo => photo.id === state.selectedPhoto)}
           handleFavoriteClick={handleFavoriteClick}
           favorites={state.favorites}
         />

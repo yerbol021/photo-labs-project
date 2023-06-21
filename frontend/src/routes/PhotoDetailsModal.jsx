@@ -1,13 +1,8 @@
 import React from 'react';
 import '../styles/PhotoDetailsModal.scss';
-import photos from '../mocks/photos';
 import PhotoList from '../components/PhotoList';
 
 export const PhotoDetailsModal = ({ onClose, photo, handleFavoriteClick, favorites }) => {
-  console.log("photo:", photo); // Print out the photo data
-  console.log("photos:", photos[photo -1]);
-  const srcImage = photos[photo -1];
-
   return (
     <div className='photo-details-modal'>
       <button className='photo-details-modal--close-button' onClick={onClose}>
@@ -24,14 +19,14 @@ export const PhotoDetailsModal = ({ onClose, photo, handleFavoriteClick, favorit
         </svg>
       </button>
       <div className="photo-details-modal--content">
-        <img src={srcImage.urls.regular} className="photo-details-modal--image" />
+        <img src={photo.urls.regular} className="photo-details-modal--image" />
         <div className="photo-details-modal--header">
           <h2>Similar Photos</h2>
         </div>
         <div className='.photo-details-modal--images'>
           <PhotoList 
             favorites={favorites}
-            photos={srcImage.similar_photos}
+            photos={photo.similar_photos}
             handleFavoriteClick={handleFavoriteClick}
           />
         </div>

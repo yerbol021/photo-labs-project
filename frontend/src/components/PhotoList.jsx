@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/PhotoList.scss';
 import PhotoListItem from './PhotoListItem';
-import photos from '../mocks/photos';
 import PhotoDetailsModal from '../routes/PhotoDetailsModal';
 
-const PhotoList = ({ handleFavoriteClick, favorites, handlePhotoClick}) => {
+const PhotoList = ({ handleFavoriteClick, favorites, handlePhotoClick, photos}) => {
 
 
   return (
@@ -26,10 +25,6 @@ const PhotoList = ({ handleFavoriteClick, favorites, handlePhotoClick}) => {
       </ul>
     </div>
   );
-};
-
-PhotoList.defaultProps = {
-  photos: photos
 };
 
 export default PhotoList;
