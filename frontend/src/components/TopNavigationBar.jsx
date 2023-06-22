@@ -1,28 +1,39 @@
-import React from 'react';
-import TopicList from './TopicList';
-import FavBadge from './FavBadge';
+import React from "react";
+import TopicList from "./TopicList";
+import FavBadge from "./FavBadge";
 
-import '../styles/TopNavigationBar.scss';
+import "../styles/TopNavigationBar.scss";
+import DarkMode from "./DarkMode";
 
-const TopNavigation = ({ handleFavoriteClick, handlePhotoClick, favoriteCount, photos, topics, setPhotos }) => {
+const TopNavigation = ({
+  handleFavoriteClick,
+  handlePhotoClick,
+  favoriteCount,
+  photos,
+  topics,
+  setPhotos,
+}) => {
   const handleTopicClick = (topic) => {
-    console.log('topic:', topic);
+    console.log("topic:", topic);
     fetch(`http://localhost:8001/api/topics/photos/${topic}`)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log({ data });
         setPhotos(data);
       })
-      .catch(error => console.error(error));
+      .catch((error) => console.error(error));
   };
 
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList handleTopicClick={handleTopicClick}
+      <TopicList
+        handleTopicClick={handleTopicClick}
         // onLoadTopic={onLoadTopic}
-        topics={topics} />
+        topics={topics}
+      />
       <FavBadge favoriteCount={favoriteCount} />
+      <DarkMode />
     </div>
   );
 };
