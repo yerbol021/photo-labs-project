@@ -50,6 +50,7 @@ const App = () => {
         favorites={state.favorites}
         photos={photos}
         topics={topics}
+        setPhotos={setPhotos}
       />
       {state.showModal && state.selectedPhoto && (
         <PhotoDetailsModal

@@ -6,7 +6,8 @@ export const ACTIONS = {
   SET_TOPIC_DATA: 'SET_TOPIC_DATA',
   SELECT_PHOTO: 'SELECT_PHOTO',
   DISPLAY_PHOTO_DETAILS: 'DISPLAY_PHOTO_DETAILS',
-  SET_CLOSE_MODAL: 'SET_CLOSE_MODAL'
+  SET_CLOSE_MODAL: 'SET_CLOSE_MODAL',
+
 }
 
 function reducer(state, action) {
@@ -55,6 +56,9 @@ function reducer(state, action) {
           photoDetails: action.data,
   
         }
+        
+
+        
 
     default:
       throw new Error(

@@ -1,22 +1,17 @@
-import React from 'react';
-import '../styles/TopicListItem.scss';
+import React from "react";
+import "../styles/TopicListItem.scss";
 
-const TopicListItem = ({
-  slug, title
-}) => {
+const TopicListItem = ({ title, handleTopicClick, id }) => {
   return (
-  <div className="topic-list__item">
-    <div className='title'>{title}
-      <div className='slug'>{slug}</div>
+    <div className="topic-list__item" onClick={() => handleTopicClick(id)}>
+      <div className="title">{title}</div>
     </div>
-  </div>
-
   );
 };
 
-TopicListItem.defaultProps =   {
-  "id": "1",
-  "slug": "topic-1",
-  "title": "Nature"
-}
-export default TopicListItem
+TopicListItem.defaultProps = {
+  id: "1",
+  slug: "topic-1",
+  title: "Nature",
+};
+export default TopicListItem;
