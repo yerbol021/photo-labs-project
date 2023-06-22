@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/DarkMode.scss";
 
 const DarkMode = () => {
-  // const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     let body = document.querySelector("body");
@@ -13,7 +12,8 @@ const DarkMode = () => {
 
   return (
     <div>
-      <button onClick={toggleDarkMode}>Dark mode</button>
+      <button className="dark-mode-toggle"
+      onClick={toggleDarkMode}>Dark mode</button>
       {/* Additional content */}
     </div>
   );
