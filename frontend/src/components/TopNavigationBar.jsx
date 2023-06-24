@@ -29,7 +29,6 @@ const TopNavigation = ({
       <span className="top-nav-bar__logo">PhotoLabs</span>
       <TopicList
         handleTopicClick={handleTopicClick}
-        // onLoadTopic={onLoadTopic}
         topics={topics}
       />
       <FavBadge favoriteCount={favoriteCount} />
