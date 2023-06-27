@@ -14,11 +14,9 @@ const TopNavigation = ({
   setPhotos,
 }) => {
   const handleTopicClick = (topic) => {
-    console.log("topic:", topic);
     fetch(`http://localhost:8001/api/topics/photos/${topic}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log({ data });
         setPhotos(data);
       })
       .catch((error) => console.error(error));
@@ -27,10 +25,7 @@ const TopNavigation = ({
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList
-        handleTopicClick={handleTopicClick}
-        topics={topics}
-      />
+      <TopicList handleTopicClick={handleTopicClick} topics={topics} />
       <FavBadge favoriteCount={favoriteCount} />
       <DarkMode />
     </div>

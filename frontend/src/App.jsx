@@ -22,7 +22,6 @@ const App = () => {
       fetch('http://localhost:8001/api/photos')
         .then(response => response.json())
         .then(data => {
-          console.log({ data });
           setPhotos(data);
         })
         .catch(error => console.error(error));
