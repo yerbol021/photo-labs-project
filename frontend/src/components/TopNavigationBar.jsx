@@ -5,16 +5,9 @@ import FavBadge from "./FavBadge";
 import "../styles/TopNavigationBar.scss";
 import DarkMode from "./DarkMode";
 
-const TopNavigation = ({
-  handleFavoriteClick,
-  handlePhotoClick,
-  favoriteCount,
-  photos,
-  topics,
-  setPhotos,
-}) => {
+const TopNavigation = ({ favoriteCount, topics, setPhotos }) => {
   const handleTopicClick = (topic) => {
-    fetch(`http://localhost:8001/api/topics/photos/${topic}`)
+    fetch(`/api/topics/photos/${topic}`)
       .then((response) => response.json())
       .then((data) => {
         setPhotos(data);
