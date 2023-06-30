@@ -17,7 +17,7 @@ const PhotoListItem = ({
         handleFavoriteClick={handleFavoriteClick}
         isFavorite={isFavorite}
       />
-      <img src={photoURL} alt="Photo" onClick={handlePhotoClick} />
+      <img className="largePhoto" src={photoURL} alt="Photo" onClick={handlePhotoClick} />
       <div className="details">
         <img className="profilePic" src={profile} />
         <div className="username">{name}</div>

@@ -1,7 +1,7 @@
 .photo-details-modal {
   background-color: white;
   box-shadow: 0 0 0 50vmax rgba(0,0,0,.5);
-  position: absolute;
+  position: fixed;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -40%);
@@ -55,4 +55,10 @@
   margin-top: 24px;
   margin-bottom: 24px;
   width: 90%;
+}
+
+.photo-details-modal--main-photo .photo-list-item .largePhoto {
+  width: 800px;
+  height: 800px;
+  object-fit: cover;
 }

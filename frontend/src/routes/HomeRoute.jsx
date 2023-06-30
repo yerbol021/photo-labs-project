@@ -13,7 +13,11 @@ export const HomeRoute = ({
 }) => {
   return (
     <div className="home-route">
-      <TopNavigation favoriteCount={favorites.length} setPhotos={setPhotos} />
+      <TopNavigation
+        favoriteCount={favorites.length}
+        setPhotos={setPhotos}
+        topics={topics}
+      />
       {photos.length > 0 && (
         <PhotoList
           handleFavoriteClick={handleFavoriteClick}

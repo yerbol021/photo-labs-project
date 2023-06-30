@@ -41,15 +41,17 @@ export const PhotoDetailsModal = ({
         </svg>
       </button>
       <div className="photo-details-modal--content">
-        <PhotoListItem
+        <div className="photo-details-modal--main-photo">
+          <PhotoListItem
           name={photo.user.name}
           location={photo.location}
           profile={photo.user.profile}
           handleFavoriteClick={() => handleFavoriteClick(photo.id)}
           handlePhotoClick={() => handlePhotoClick(photo.id)}
           isFavorite={favorites.includes(photo.id)}
-          photoURL={photo.urls.regular}
-        />
+          photoURL={photo.urls.full}
+          />
+          </div>
         <div className="photo-details-modal--header">
           <h2>Similar Photos</h2>
         </div>
