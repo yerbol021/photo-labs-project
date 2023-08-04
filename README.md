@@ -20,6 +20,7 @@ View a heart icon with a notification in the navigation if there are liked photo
 Persist data by making API requests to load and save data. The relevant data should not be lost after a session restarts or browser refresh.
 
 ##Technical Specifications
+ Here will be technical specification
 
 #The PhotoLabs application is built using the following technologies:
 
